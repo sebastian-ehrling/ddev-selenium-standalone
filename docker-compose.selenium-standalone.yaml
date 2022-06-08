@@ -1,0 +1,22 @@
+version: '3.6'
+services:
+  selenium:
+    container_name: ddev-${DDEV_SITENAME}-selenium
+    hostname: ${DDEV_SITENAME}-selenium
+    image: seleniarm/standalone-chromium:4.1.1-alpha-20220119
+    restart: unless-stopped
+    external_links:
+      - "ddev-router:${DDEV_HOSTNAME}"
+    ports:
+      - "5900:5900"
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    volumes:
+      - ".:/mnt/ddev_config"
+  web:
+    links:
+      - selenium:selenium
+
+volumes:
+  selenium:

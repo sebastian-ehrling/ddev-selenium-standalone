@@ -3,7 +3,7 @@ setup() {
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )/.."
   export TESTDIR=~/tmp/testselenium
   mkdir -p $TESTDIR
-  export PROJNAME=test-addon-template
+  export PROJNAME=selenium-standalone
   export DDEV_NON_INTERACTIVE=true
   ddev delete -Oy ${PROJNAME} || true
   cd "${TESTDIR}"

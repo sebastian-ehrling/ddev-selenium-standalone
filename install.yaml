@@ -1,7 +1,5 @@
-name: addon-template
+name: ddev-selenium-standalone
 
 # list of files and directories listed that are copied into project .ddev directory
 project_files:
 - docker-compose.selenium-standalone.yaml
-# - extra_files/
-# - somefile.sh
